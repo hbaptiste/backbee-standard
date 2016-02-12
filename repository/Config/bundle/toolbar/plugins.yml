@@ -1,0 +1,97 @@
+namespace:
+    core: src/tb/apps/content/plugins/
+    demo: ~
+
+core:
+    contentselector:
+        accept: ['*']
+        config: []
+
+    parameters:
+        accept: ['*']
+        config: []
+
+    contentsetplus:
+        accept: ['*']
+        config: []
+
+    contentsplitter:
+      accept: ['*']
+      config:
+        splittableContents:
+            - Text/Paragraph
+            - Text/ABlock
+            - Text/AnOtherContent
+
+    addtomedialibrary:
+      accept: ['*']
+      preload: true
+      config: []
+
+    remove:
+        accept: ['*']
+        config: []
+
+    imagepicker:
+        accept: ['*']
+        config: []
+
+    edition:
+        accept: ['*']
+        config: []
+
+    dnd:
+       accept: ['*']
+       config: []
+
+    rte:
+      accept: ['*']
+      config:
+        adapter: 'cke'
+        aloha:
+            libPath: ''
+        cke:
+            libName: 'ckeeditor'
+            skin: 'backbee,/resources/toolbar/src/tb/component/cke/skins/backbee/'
+            externalPluginsPath: '/resources/js/cke-plugins/'
+            editableConfig:
+                basic:
+                    title: ''
+                    toolbarGroups:
+                        - {name: 'editing', groups: ['basicstyles', 'links']}
+                        - {name: 'undo'}
+                        - {name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] }
+                        - {name: 'paragraph',   groups: [ 'list','blocks', 'align', 'bidi' ] }
+                        - {name: 'clipboard', groups: ['selection', 'clipboard']}
+                        - {name: 'insert', groups: ['table']}
+                        - {name: 'styles'}
+
+                    extraPlugins: 'justify'
+                    removeButtons: 'About,Anchor,Image,HorizontalRule,SpecialChar,Format'
+                    extraAllowedContent: 'span(*)[id];div(*)[id];p(*)[id];h1(*)[id];h2(*)[id];h3(*)[id];h4(*)[id];h5(*)[id];ol(*)[id];ul(*)[id];li(*)[id]'
+
+                    stylesSet:
+                      - { name: 'normal', element: 'p' }
+                      - { name: 'Titre 3', element: 'h3' }
+                      - { name: 'Titre 4', element: 'h4' }
+
+
+                    fillEmptyBlocks: false
+                    #paste from word configs
+                    pasteFromWordPromptCleanup: true
+                    forcePasteAsPlainText: true
+                    #deal with new paragraph
+                    ignoreEmptyParagraph: true
+                    autoParagraph: false
+                    enterMode: 1
+                    shiftEnterMode: 2
+                    forceEnterMode: true
+                    fillEmptyBlocks: false
+
+                lite:
+                    title: "lite editor"
+                    toolbarGroups: []
+                    removePlugins: 'colorbutton,specialchar,links'
+                    removeButtons: 'About,Anchor'
+                    extraAllowedContent: 'span(*)[id];div(*)[id];p(*)[id];h1(*)[id];h2(*)[id];h3(*)[id];h4(*)[id];h5(*)[id];ol(*)[id];ul(*)[id];li(*)[id]'
+demo: []
